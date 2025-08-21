@@ -1,0 +1,694 @@
+test_datasets:
+  - _target_: dataset_module.GeneralPPIDataset
+    dataset_name: rcsb_two_proteins_test
+    seq_path: /data/rbg/users/wxsh/esm3/data/boltz2_training/rcsb/polymers_after_20230601/rcsb_2prot_after_20230601.test_si_0.7/seqs.fasta
+    json_path: /data/rbg/users/wxsh/esm3/data/boltz2_training/rcsb/polymers_after_20230601/rcsb_2prot_after_20230601.test_si_0.7/pos.json
+    sequence_identity_threshold: 0.7
+    edit_distance_threshold: 3
+
+  - _target_: dataset_module.GeneralPPIDataset
+    dataset_name: skempi
+    seq_path: /data/rbg/users/wxsh/esm3/data/skempi/processed/skempi_v2_by_pdb.test.test_si_1.0/seqs.fasta
+    json_path: /data/rbg/users/wxsh/esm3/data/skempi/processed/skempi_v2_by_pdb.test.test_si_1.0/data.json
+    sequence_identity_threshold: 1.0
+    edit_distance_threshold: 0
+  
+  - _target_: dataset_module.MiniproteinDataset
+    dataset_name: cao_nature_2022
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/baker_2022/processed_merged/testset_subsample/mini_proteins_cao_nature_2022.test_target_0.7_binder_0.7_subsample_14340_target_seqs.fasta
+    binder_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/baker_2022/processed_merged/testset_subsample/mini_proteins_cao_nature_2022.test_target_0.7_binder_0.7_subsample_14340_binder_seqs.fasta
+    json_path: /data/rbg/users/wxsh/esm3/data/peptides/baker_2022/processed_merged/testset_subsample/mini_proteins_cao_nature_2022.test_target_0.7_binder_0.7_subsample_14340.json
+    alignment_paths:
+      target_to_rcsb:
+        - /data/rbg/users/wxsh/esm3/data/peptides/baker_2022/processed_merged/alnRes/target_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_1.m8
+        - /data/rbg/users/wxsh/esm3/data/peptides/baker_2022/processed_merged/alnRes/target_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_2.m8
+      target_to_target:
+        - /data/rbg/users/wxsh/esm3/data/peptides/baker_2022/processed_merged/alnRes/target_seqs_TO_target_seqs.m8
+    sequence_identity_threshold:
+      target: 0.7
+      binder: 0.7
+    edit_distance_threshold:
+      target: 3
+      binder: 3
+
+  - _target_: dataset_module.MiniproteinDataset
+    dataset_name: chevalier_nature_2017
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/baker_2017/processed_merged/testset_subsample/mini_proteins_chevalier_nature_2017.test_target_0.7_binder_0.7_subsample_6040_target_seqs.fasta
+    binder_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/baker_2017/processed_merged/testset_subsample/mini_proteins_chevalier_nature_2017.test_target_0.7_binder_0.7_subsample_6040_binder_seqs.fasta
+    json_path: /data/rbg/users/wxsh/esm3/data/peptides/baker_2017/processed_merged/testset_subsample/mini_proteins_chevalier_nature_2017.test_target_0.7_binder_0.7_subsample_6040.json
+    alignment_paths:
+      target_to_rcsb:
+        - /data/rbg/users/wxsh/esm3/data/peptides/baker_2017/processed_merged/alnRes/target_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_1.m8
+        - /data/rbg/users/wxsh/esm3/data/peptides/baker_2017/processed_merged/alnRes/target_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_2.m8
+      target_to_target:
+        - /data/rbg/users/wxsh/esm3/data/peptides/baker_2017/processed_merged/alnRes/target_seqs_TO_target_seqs.m8
+    sequence_identity_threshold:
+      target: 0.7
+      binder: 0.7
+    edit_distance_threshold:
+      target: 3
+      binder: 3
+
+  - _target_: dataset_module.MiniproteinDataset
+    dataset_name: egfr_competition_2
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/egfr_competition_2/egfr_competition_2_target_seqs.fasta
+    binder_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/egfr_competition_2/egfr_competition_2_binder_seqs.fasta
+    json_path: /data/rbg/users/wxsh/esm3/data/peptides/egfr_competition_2/egfr_competition_2.test_target_0.7_binder_0.7.json
+    alignment_paths:
+      target_to_rcsb:
+        - /data/rbg/users/wxsh/esm3/data/peptides/egfr_competition_2/alnRes/target_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_1.m8
+        - /data/rbg/users/wxsh/esm3/data/peptides/egfr_competition_2/alnRes/target_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_2.m8
+      target_to_target:
+        - /data/rbg/users/wxsh/esm3/data/peptides/egfr_competition_2/alnRes/target_seqs_TO_target_seqs.m8
+    sequence_identity_threshold:
+      target: 0.7
+      binder: 0.7
+    edit_distance_threshold:
+      target: 3
+      binder: 3
+
+  - _target_: dataset_module.MiniproteinDataset
+    dataset_name: pancs_test
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/testset_subsample/pancs_merged.test_subsample_11783_target_seqs.fasta
+    binder_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/testset_subsample/pancs_merged.test_subsample_11783_binder_seqs.fasta
+    json_path: /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/testset_subsample/pancs_merged.test_subsample_11783.json
+    alignment_paths:
+      target_to_rcsb:
+        - /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/alnRes/target_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_1.m8
+        - /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/alnRes/target_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_2.m8
+      target_to_target:
+        - /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/alnRes/target_seqs_TO_target_seqs.m8
+    sequence_identity_threshold:
+      target: 0.7
+      binder: 0.7
+    edit_distance_threshold:
+      target: 3
+      binder: 3
+
+  - _target_: dataset_module.AntibodyDataset
+    dataset_name: sabdab_test
+    json_path: /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/sabdab_summary_all_1vh1vl.test_vh_0.7_vl_0.7_an_0.7/data.json
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/sabdab_summary_all_1vh1vl.test_vh_0.7_vl_0.7_an_0.7/antigen_seqs.fasta
+    vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/sabdab_summary_all_1vh1vl.test_vh_0.7_vl_0.7_an_0.7/vh_seqs.fasta
+    vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/sabdab_summary_all_1vh1vl.test_vh_0.7_vl_0.7_an_0.7/vl_seqs.fasta
+    target_peptide_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/antigen_peptide.txt
+    alignment_paths:
+      target_to_rcsb:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/alnRes/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_1.m8
+        - /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/alnRes/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_2.m8
+      target_to_target:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/alnRes/antigen_seqs_TO_antigen_seqs.m8
+      target_peptide_to_rcsb:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/alnRes/antigen_peptide_TO_rcsb_boltz2_train_seqs.m8
+    sequence_identity_threshold:
+      antigen: 0.7
+      vh: 0.7
+      vl: 0.7
+    edit_distance_threshold:
+      antigen: 3
+  
+  - _target_: dataset_module.AntibodyDataset
+    dataset_name: Emi_Pareto_Opt_ML
+    json_path: /data/rbg/users/wxsh/esm3/data/antibodies/Emi_Pareto_Opt_ML/wenxian/emi_binding.json
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/Emi_Pareto_Opt_ML/wenxian/emi_binding_antigen_seqs.fasta
+    vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/Emi_Pareto_Opt_ML/wenxian/emi_binding_vh_seqs.fasta
+    vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/Emi_Pareto_Opt_ML/wenxian/emi_binding_vl_seqs.fasta
+    alignment_paths:
+      target_to_rcsb:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/Emi_Pareto_Opt_ML/wenxian/alnRes/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_1.m8
+        - /data/rbg/users/wxsh/esm3/data/antibodies/Emi_Pareto_Opt_ML/wenxian/alnRes/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_2.m8
+      target_to_target:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/Emi_Pareto_Opt_ML/wenxian/alnRes/antigen_seqs_TO_antigen_seqs.m8
+    sequence_identity_threshold:
+      antigen: 0.7
+      vh: 1.0
+      vl: 1.0
+    edit_distance_threshold:
+      antigen: 3
+
+  - _target_: dataset_module.AntibodyDataset
+    dataset_name: AVIDa-hIL6
+    json_path: /data/rbg/users/wxsh/esm3/data/antibodies/AVIDa-hIL6/testset/AVIDa-hIL6_vh_subsample_20150.json
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AVIDa-hIL6/testset/AVIDa-hIL6_vh_subsample_20150_antigen_seqs.fasta
+    vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AVIDa-hIL6/testset/AVIDa-hIL6_vh_subsample_20150_vh_seqs.fasta
+    alignment_paths:
+      target_to_rcsb:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/AVIDa-hIL6/alnRes_vh/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_1.m8
+        - /data/rbg/users/wxsh/esm3/data/antibodies/AVIDa-hIL6/alnRes_vh/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_2.m8
+      target_to_target:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/AVIDa-hIL6/alnRes_vh/antigen_seqs_TO_antigen_seqs.m8
+    sequence_identity_threshold:
+      antigen: 1.0
+      vh: 1.0
+      vl: 1.0
+    edit_distance_threshold:
+      antigen: 0
+
+  - _target_: dataset_module.AntibodyDataset
+    dataset_name: igdesign
+    json_path: /data/rbg/users/wxsh/esm3/data/antibodies/igdesign/data/processed/IgDesign.test_vh_1.0_vl_1.0_an_0.7/data.json
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/igdesign/data/processed/IgDesign.test_vh_1.0_vl_1.0_an_0.7/antigen_seqs.fasta
+    vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/igdesign/data/processed/IgDesign.test_vh_1.0_vl_1.0_an_0.7/vh_seqs.fasta
+    vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/igdesign/data/processed/IgDesign.test_vh_1.0_vl_1.0_an_0.7/vl_seqs.fasta
+    alignment_paths:
+      target_to_rcsb:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/igdesign/data/processed/alnRes/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_1.m8
+        - /data/rbg/users/wxsh/esm3/data/antibodies/igdesign/data/processed/alnRes/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_2.m8
+      target_to_target:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/igdesign/data/processed/alnRes/antigen_seqs_TO_antigen_seqs.m8
+    sequence_identity_threshold:
+      antigen: 0.7
+      vh: 1.0
+      vl: 1.0
+    edit_distance_threshold:
+      antigen: 3
+
+  - _target_: dataset_module.AntibodyDataset
+    dataset_name: CoV-AbDab
+    json_path: /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/CoV-AbDab_080224_split_by_variants/test.test_vh_1.0_vl_1.0_an_1.0/data_subsample_1000.json
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/CoV-AbDab_080224_split_by_variants/test.test_vh_1.0_vl_1.0_an_1.0/antigen_seqs.fasta
+    vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/CoV-AbDab_080224_split_by_variants/test.test_vh_1.0_vl_1.0_an_1.0/data_subsample_1000_vh_seqs.fasta
+    vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/CoV-AbDab_080224_split_by_variants/test.test_vh_1.0_vl_1.0_an_1.0/data_subsample_1000_vl_seqs.fasta
+    alignment_paths:
+      target_to_rcsb:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/alnRes/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_1.m8
+        - /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/alnRes/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_2.m8
+      target_to_target:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/alnRes/antigen_seqs_TO_antigen_seqs.m8
+    sequence_identity_threshold:
+      antigen: 1.0
+      vh: 1.0
+      vl: 1.0
+    edit_distance_threshold:
+      antigen: 0
+
+  - _target_: dataset_module.AntibodyDataset
+    dataset_name: AlphaSeq_assay_1
+    json_path: /data/rbg/users/wxsh/esm3/data/antibodies/AlphaSeq_Antibody_Dataset/antibody_dataset_1/processed/test_set_subsample/MITLL_AAlphaBio_Ab_Binding_dataset_assay1_3replicate_1vh1vl_subsample_1000.json
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AlphaSeq_Antibody_Dataset/antibody_dataset_1/processed/test_set_subsample/MITLL_AAlphaBio_Ab_Binding_dataset_assay1_3replicate_1vh1vl_subsample_1000_antigen_seqs.fasta
+    vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AlphaSeq_Antibody_Dataset/antibody_dataset_1/processed/test_set_subsample/MITLL_AAlphaBio_Ab_Binding_dataset_assay1_3replicate_1vh1vl_subsample_1000_vh_seqs.fasta
+    vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AlphaSeq_Antibody_Dataset/antibody_dataset_1/processed/test_set_subsample/MITLL_AAlphaBio_Ab_Binding_dataset_assay1_3replicate_1vh1vl_subsample_1000_vl_seqs.fasta
+    sequence_identity_threshold:
+      antigen: 0.7
+      vh: 1.0
+      vl: 1.0
+    edit_distance_threshold:
+      antigen: 3
+
+  - _target_: dataset_module.AntibodyDataset
+    dataset_name: AlphaSeq_assay_2
+    json_path: /data/rbg/users/wxsh/esm3/data/antibodies/AlphaSeq_Antibody_Dataset/antibody_dataset_1/processed/test_set_subsample/MITLL_AAlphaBio_Ab_Binding_dataset_assay2_3replicate_1vh1vl_subsample_1000.json
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AlphaSeq_Antibody_Dataset/antibody_dataset_1/processed/test_set_subsample/MITLL_AAlphaBio_Ab_Binding_dataset_assay2_3replicate_1vh1vl_subsample_1000_antigen_seqs.fasta
+    vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AlphaSeq_Antibody_Dataset/antibody_dataset_1/processed/test_set_subsample/MITLL_AAlphaBio_Ab_Binding_dataset_assay2_3replicate_1vh1vl_subsample_1000_vh_seqs.fasta
+    vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AlphaSeq_Antibody_Dataset/antibody_dataset_1/processed/test_set_subsample/MITLL_AAlphaBio_Ab_Binding_dataset_assay2_3replicate_1vh1vl_subsample_1000_vl_seqs.fasta
+    sequence_identity_threshold:
+      antigen: 0.7
+      vh: 1.0
+      vl: 1.0
+    edit_distance_threshold:
+      antigen: 3
+
+  - _target_: dataset_module.AntibodyDataset
+    dataset_name: AlphaSeq_ML
+    json_path: /data/rbg/users/wxsh/esm3/data/antibodies/AlphaSeq_Antibody_Dataset/antibody_dataset_2/processed/test_set_subsample/MITLL_AAlphaBio_Ab_Binding_dataset2_3replicate_1vh1vl_subsample_1000.json
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AlphaSeq_Antibody_Dataset/antibody_dataset_2/processed/test_set_subsample/MITLL_AAlphaBio_Ab_Binding_dataset2_3replicate_1vh1vl_subsample_1000_antigen_seqs.fasta
+    vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AlphaSeq_Antibody_Dataset/antibody_dataset_2/processed/test_set_subsample/MITLL_AAlphaBio_Ab_Binding_dataset2_3replicate_1vh1vl_subsample_1000_vh_seqs.fasta
+    vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AlphaSeq_Antibody_Dataset/antibody_dataset_2/processed/test_set_subsample/MITLL_AAlphaBio_Ab_Binding_dataset2_3replicate_1vh1vl_subsample_1000_vl_seqs.fasta
+    sequence_identity_threshold:
+      antigen: 0.7
+      vh: 1.0
+      vl: 1.0
+    edit_distance_threshold:
+      antigen: 3
+
+  - _target_: dataset_module.AntibodyDataset
+    dataset_name: porebski_her2_affmat
+    json_path: /data/rbg/users/wxsh/esm3/data/antibodies/porebski_et_al_2023_datasets/processed/porebski_her2_affmat/test_set_subsample_neg/porebski_her2_affmat_subsample_1110/data.json
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/porebski_et_al_2023_datasets/processed/porebski_her2_affmat/test_set_subsample_neg/porebski_her2_affmat_subsample_1110/antigen_seqs.fasta
+    vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/porebski_et_al_2023_datasets/processed/porebski_her2_affmat/test_set_subsample_neg/porebski_her2_affmat_subsample_1110/vh_seqs.fasta
+    vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/porebski_et_al_2023_datasets/processed/porebski_her2_affmat/test_set_subsample_neg/porebski_her2_affmat_subsample_1110/vl_seqs.fasta
+    sequence_identity_threshold:
+      antigen: 0.7
+      vh: 1.0
+      vl: 1.0
+    edit_distance_threshold:
+      antigen: 3
+  
+  - _target_: dataset_module.AntibodyDataset
+    dataset_name: porebski_her2_ml
+    json_path: /data/rbg/users/wxsh/esm3/data/antibodies/porebski_et_al_2023_datasets/processed/porebski_her2_ml/test_set_subsample/porebski_her2_ml_subsample_1000/data.json
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/porebski_et_al_2023_datasets/processed/porebski_her2_ml/test_set_subsample/porebski_her2_ml_subsample_1000/antigen_seqs.fasta
+    vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/porebski_et_al_2023_datasets/processed/porebski_her2_ml/test_set_subsample/porebski_her2_ml_subsample_1000/vh_seqs.fasta
+    vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/porebski_et_al_2023_datasets/processed/porebski_her2_ml/test_set_subsample/porebski_her2_ml_subsample_1000/vl_seqs.fasta
+    sequence_identity_threshold:
+      antigen: 0.7
+      vh: 1.0
+      vl: 1.0
+    edit_distance_threshold:
+      antigen: 3
+
+  - _target_: dataset_module.AntibodyDataset
+    dataset_name: nature_her2
+    json_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/nature_her2/nature_her2.json
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/nature_her2/antigen_seqs.fasta
+    vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/nature_her2/vh_seqs.fasta
+    vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/nature_her2/vl_seqs.fasta
+    sequence_identity_threshold:
+      antigen: 0.7
+      vh: 1.0
+      vl: 1.0
+    edit_distance_threshold:
+      antigen: 3
+
+  - _target_: dataset_module.AntibodyDataset
+    dataset_name: nature_hel
+    json_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/nature_hel/nature_hel.json
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/nature_hel/target_seq.fasta
+    vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/nature_hel/vh_seqs.fasta
+    alignment_paths:
+      target_to_rcsb:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/nature_hel/alnRes/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_1.m8
+        - /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/nature_hel/alnRes/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_2.m8
+      target_to_target:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/nature_hel/alnRes/antigen_seqs_TO_antigen_seqs.m8
+    sequence_identity_threshold:
+      antigen: 0.7
+      vh: 1.0
+      vl: 1.0
+    edit_distance_threshold:
+      antigen: 3
+
+  - _target_: dataset_module.AntibodyDataset
+    dataset_name: absci_her2_sc
+    json_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/absci_her2_sc/absci_her2_sc.test_vh_1.0_vl_1.0_an_0.7/data.json
+    target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/absci_her2_sc/absci_her2_sc.test_vh_1.0_vl_1.0_an_0.7/antigen_seqs.fasta
+    vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/absci_her2_sc/absci_her2_sc.test_vh_1.0_vl_1.0_an_0.7/vh_seqs.fasta
+    vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/absci_her2_sc/absci_her2_sc.test_vh_1.0_vl_1.0_an_0.7/vl_seqs.fasta
+    alignment_paths:
+      target_to_rcsb:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/absci_her2_sc/alnRes/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_1.m8
+        - /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/absci_her2_sc/alnRes/antigen_seqs_TO_rcsb_boltz2_train_seqs_cov_mode_2.m8
+      target_to_target:
+        - /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/absci_her2_sc/alnRes/antigen_seqs_TO_antigen_seqs.m8
+    sequence_identity_threshold:
+      antigen: 0.7
+      vh: 1.0
+      vl: 1.0
+    edit_distance_threshold:
+      antigen: 3
+
+  # - _target_: dataset_module.AntibodyDataset
+  #   dataset_name: absci_her2_zs
+  #   json_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/absci_her2_zs/absci_her2_zs.test_vh_1.0_vl_1.0_an_0.7/data.json
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/absci_her2_zs/antigen_seqs.fasta
+  #   vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/absci_her2_zs/vh_seqs.fasta
+  #   vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/DiffAbXL/benchmarking_datasets/absci_her2_zs/vl_seqs.fasta
+  #   sequence_identity_threshold:
+  #     antigen: 0.7
+  #     vh: 1.0
+  #     vl: 1.0
+  #   edit_distance_threshold:
+  #     antigen: 3
+  
+  # - _target_: dataset_module.AntibodyDataset
+  #   dataset_name: AbBiBench_1mhp
+  #   json_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/1mhp/data.json
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/1mhp/antigen_seqs.fasta
+  #   vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/1mhp/vh_seqs.fasta
+  #   vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/1mhp/vl_seqs.fasta
+  #   sequence_identity_threshold:
+  #     antigen: 0.7
+  #     vh: 1.0
+  #     vl: 1.0
+  #   edit_distance_threshold:
+  #     antigen: 3
+  
+  # - _target_: dataset_module.AntibodyDataset
+  #   dataset_name: AbBiBench_1mlc
+  #   json_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/1mlc/data.json
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/1mlc/antigen_seqs.fasta
+  #   vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/1mlc/vh_seqs.fasta
+  #   vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/1mlc/vl_seqs.fasta
+  #   sequence_identity_threshold:
+  #     antigen: 0.7
+  #     vh: 1.0
+  #     vl: 1.0
+  #   edit_distance_threshold:
+  #     antigen: 3
+  
+  # - _target_: dataset_module.AntibodyDataset
+  #   dataset_name: AbBiBench_2fjg
+  #   json_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/2fjg/data.test_vh_1.0_vl_1.0_an_0.7/data.json
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/2fjg/data.test_vh_1.0_vl_1.0_an_0.7/antigen_seqs.fasta
+  #   vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/2fjg/data.test_vh_1.0_vl_1.0_an_0.7/vh_seqs.fasta
+  #   vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/2fjg/data.test_vh_1.0_vl_1.0_an_0.7/vl_seqs.fasta
+  #   sequence_identity_threshold:
+  #     antigen: 0.7
+  #     vh: 1.0
+  #     vl: 1.0
+  #   edit_distance_threshold:
+  #     antigen: 3
+  
+  # - _target_: dataset_module.AntibodyDataset
+  #   dataset_name: AbBiBench_3gbn_h1
+  #   json_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/3gbn_h1/data.json
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/3gbn_h1/antigen_seqs.fasta
+  #   vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/3gbn_h1/vh_seqs.fasta
+  #   vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/3gbn_h1/vl_seqs.fasta
+  #   sequence_identity_threshold:
+  #     antigen: 0.7
+  #     vh: 1.0
+  #     vl: 1.0
+  #   edit_distance_threshold:
+  #     antigen: 3
+  
+  # - _target_: dataset_module.AntibodyDataset
+  #   dataset_name: AbBiBench_3gbn_h9
+  #   json_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/3gbn_h9/data.json
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/3gbn_h9/antigen_seqs.fasta
+  #   vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/3gbn_h9/vh_seqs.fasta
+  #   vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/3gbn_h9/vl_seqs.fasta
+  #   sequence_identity_threshold:
+  #     antigen: 0.7
+  #     vh: 1.0
+  #     vl: 1.0
+  #   edit_distance_threshold:
+  #     antigen: 3
+  
+  # - _target_: dataset_module.AntibodyDataset
+  #   dataset_name: AbBiBench_4fqi_h1
+  #   json_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/4fqi_h1/test_set_subsample/data_subsample_1000/data.json
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/4fqi_h1/test_set_subsample/data_subsample_1000/antigen_seqs.fasta
+  #   vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/4fqi_h1/test_set_subsample/data_subsample_1000/vh_seqs.fasta
+  #   vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/4fqi_h1/test_set_subsample/data_subsample_1000/vl_seqs.fasta
+  #   sequence_identity_threshold:
+  #     antigen: 0.7
+  #     vh: 1.0
+  #     vl: 1.0
+  #   edit_distance_threshold:
+  #     antigen: 3
+
+  # - _target_: dataset_module.AntibodyDataset
+  #   dataset_name: AbBiBench_4fqi_h3
+  #   json_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/4fqi_h3/test_set_subsample/data_subsample_1000/data.json
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/4fqi_h3/test_set_subsample/data_subsample_1000/antigen_seqs.fasta
+  #   vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/4fqi_h3/test_set_subsample/data_subsample_1000/vh_seqs.fasta
+  #   vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/AbBiBench/processed/4fqi_h3/test_set_subsample/data_subsample_1000/vl_seqs.fasta
+  #   sequence_identity_threshold:
+  #     antigen: 0.7
+  #     vh: 1.0
+  #     vl: 1.0
+  #   edit_distance_threshold:
+  #     antigen: 3
+
+  # # - _target_: dataset_module.AntibodyDataset
+  # #   dataset_name: 
+  # #   json_path: 
+  # #   target_seq_path: 
+  # #   vh_seq_path: 
+  # #   vl_seq_path: 
+
+  - _target_: dataset_module.TCRpMHCDataset
+    dataset_name: jacks_v2
+    json_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/jacks_v2/test_set_subsample_neg/jacks_v2.test_peptide_3_and_tcr_1.0_subsample_2448/data.json
+    mhc_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/jacks_v2/test_set_subsample_neg/jacks_v2.test_peptide_3_and_tcr_1.0_subsample_2448/mhc_seqs.fasta
+    tcra_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/jacks_v2/test_set_subsample_neg/jacks_v2.test_peptide_3_and_tcr_1.0_subsample_2448/tcr_va_seqs.fasta
+    tcrb_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/jacks_v2/test_set_subsample_neg/jacks_v2.test_peptide_3_and_tcr_1.0_subsample_2448/tcr_vb_seqs.fasta
+    peptide_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/jacks_v2/test_set_subsample_neg/jacks_v2.test_peptide_3_and_tcr_1.0_subsample_2448/peptide_seqs.fasta
+    edit_distance_threshold:
+      peptide: 3
+    sequence_identity_threshold:
+      tcr: 1.0
+      mhc: 1.0
+
+  - _target_: dataset_module.TCRpMHCDataset
+    dataset_name: immrep23
+    json_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep23/immrep23.test_peptide_3_and_tcr_1.0.json
+    mhc_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep23/mhc_seqs.fasta
+    tcra_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep23/tcr_va_seqs.fasta
+    tcrb_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep23/tcr_vb_seqs.fasta
+    peptide_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep23/peptide_seqs.fasta
+    edit_distance_threshold:
+      peptide: 3
+    sequence_identity_threshold:
+      tcr: 1.0
+      mhc: 1.0
+  
+  - _target_: dataset_module.TCRpMHCDataset
+    dataset_name: immrep25_val_no10xv2
+    json_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep25_val_no10xv2/immrep25_val_no10xv2.test_peptide_3_and_tcr_1.0.json
+    mhc_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep25_val_no10xv2/mhc_seqs.fasta
+    tcra_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep25_val_no10xv2/tcr_va_seqs.fasta
+    tcrb_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep25_val_no10xv2/tcr_vb_seqs.fasta
+    peptide_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep25_val_no10xv2/peptide_seqs.fasta
+    edit_distance_threshold:
+      peptide: 3
+    sequence_identity_threshold:
+      tcr: 1.0
+      mhc: 1.0
+  
+  - _target_: dataset_module.TCRpMHCDataset
+    dataset_name: mouse_h2kb_val
+    json_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_h2kb_val/mouse_h2kb_val.test_peptide_3_and_tcr_1.0.json
+    mhc_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_h2kb_val/mhc_seqs.fasta
+    tcra_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_h2kb_val/tcr_va_seqs.fasta
+    tcrb_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_h2kb_val/tcr_vb_seqs.fasta
+    peptide_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_h2kb_val/peptide_seqs.fasta
+    edit_distance_threshold:
+      peptide: 3
+    sequence_identity_threshold:
+      tcr: 1.0
+      mhc: 1.0
+  
+  # # - _target_: dataset_module.TCRpMHCDataset
+  # #   dataset_name: 
+  # #   json_path: 
+  # #   mhc_seq_path: 
+  # #   tcra_seq_path: 
+  # #   tcrb_seq_path: 
+  # #   peptide_seq_path: 
+
+train_datasets:
+  # - _target_: dataset_module.AntibodyDataset
+  #   dataset_name: sabdab_train
+  #   json_path: /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/sabdab_summary_all_1vh1vl.json
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/antigen_seqs.fasta
+  #   vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/vh_seqs.fasta
+  #   vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/vl_seqs.fasta
+  #   alignment_paths:
+  #     target_to_target:
+  #       - /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/alnRes/antigen_seqs_TO_antigen_seqs.m8
+  #     vh_to_vh:
+  #       - /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/alnRes/vh_seqs_TO_vh_seqs.m8
+  #     vl_to_vl:
+  #       - /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/alnRes/vl_seqs_TO_vl_seqs.m8
+  #   # target_to_target_mmseqs_alignment_path: 
+  #   # target_peptide_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/sabdab/processed/antigen_peptide.txt
+  
+  # - _target_: dataset_module.AntibodyDataset
+  #   dataset_name: antibody_patent
+  #   json_path: /data/rbg/users/wxsh/esm3/data/antibodies/patent/vincent_data_clean_1vh1vl.json
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/patent/antigen_sequences.fasta
+  #   vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/patent/vh_seqs.fasta
+  #   vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/patent/vl_seqs.fasta
+  #   alignment_paths:
+  #     target_to_target:
+  #       - /data/rbg/users/wxsh/esm3/data/antibodies/patent/alnRes/antigen_seqs_TO_antigen_seqs.m8
+  #     vh_to_vh:
+  #       - /data/rbg/users/wxsh/esm3/data/antibodies/patent/alnRes/vh_seqs_TO_vh_seqs.m8
+  #     vl_to_vl:
+  #       - /data/rbg/users/wxsh/esm3/data/antibodies/patent/alnRes/vl_seqs_TO_vl_seqs.m8
+  
+  # - _target_: dataset_module.AntibodyDataset
+  #   dataset_name: cov_abdab_train
+  #   json_path: /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/CoV-AbDab_080224_split_by_variants/train.json
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/CoV-AbDab_080224_antigen_seqs.fasta
+  #   vh_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/CoV-AbDab_080224_vh_seqs.fasta
+  #   vl_seq_path: /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/CoV-AbDab_080224_vl_seqs.fasta
+  #   alignment_paths:
+  #     target_to_target:
+  #       - /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/alnRes/antigen_seqs_TO_antigen_seqs.m8
+  #     vh_to_vh:
+  #       - /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/alnRes/vh_seqs_TO_vh_seqs.m8
+  #     vl_to_vl:
+  #       - /data/rbg/users/wxsh/esm3/data/antibodies/cov_abdab/processed/alnRes/vl_seqs_TO_vl_seqs.m8
+
+  # - _target_: dataset_module.MiniproteinDataset
+  #   dataset_name: pancs_train
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/pancs_merged_train/target_seqs.fasta
+  #   binder_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/pancs_merged_train/binder_seqs.fasta
+  #   json_path: /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/pancs_merged_train/data.json
+  #   alignment_paths:
+  #     target_to_target:
+  #       - /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/alnRes/target_seqs_TO_target_seqs.m8
+  #     binder_to_binder:
+  #       - /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/alnRes/binder_seqs_TO_binder_seqs.m8
+  
+  # - _target_: dataset_module.MiniproteinDataset
+  #   dataset_name: ppikd
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/ppikd/processed/target_seqs.fasta
+  #   binder_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/ppikd/processed/binder_seqs.fasta
+  #   json_path: /data/rbg/users/wxsh/esm3/data/peptides/ppikd/processed/data.json
+  #   alignment_paths:
+  #     target_to_target:
+  #       - /data/rbg/users/wxsh/esm3/data/peptides/ppikd/processed/alnRes/target_seqs_TO_target_seqs.m8
+  #     binder_to_binder:
+  #       - /data/rbg/users/wxsh/esm3/data/peptides/ppikd/processed/alnRes/binder_seqs_TO_binder_seqs.m8
+  
+  # - _target_: dataset_module.MiniproteinDataset
+  #   dataset_name: ppikd
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/ppikd/processed/target_seqs.fasta
+  #   binder_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/ppikd/processed/binder_seqs.fasta
+  #   json_path: /data/rbg/users/wxsh/esm3/data/peptides/ppikd/processed/data.json
+  #   alignment_paths:
+  #     target_to_target:
+  #       - /data/rbg/users/wxsh/esm3/data/peptides/ppikd/processed/alnRes/target_seqs_TO_target_seqs.m8
+  #     binder_to_binder:
+  #       - /data/rbg/users/wxsh/esm3/data/peptides/ppikd/processed/alnRes/binder_seqs_TO_binder_seqs.m8
+  
+  # - _target_: dataset_module.GeneralPPIDataset
+  #   dataset_name: intact_biogrid
+  #   seq_path: /data/rbg/users/wxsh/esm3/data/interactions/intact_and_biogrid_direct_interactions/pos_maxLL_1500.plddt70/seqs.fasta
+  #   json_path: /data/rbg/users/wxsh/esm3/data/interactions/intact_and_biogrid_direct_interactions/pos_maxLL_1500.plddt70/data.json
+  #   alignment_paths:
+  #     seq_to_seq:
+  #       - /data/rbg/users/wxsh/esm3/data/interactions/intact_and_biogrid_direct_interactions/pos_maxLL_1500.plddt70/alnRes/seqs_TO_seqs.m8
+
+  # - _target_: dataset_module.GeneralPPIDataset
+  #   dataset_name: skempi_train
+  #   seq_path: /data/rbg/users/wxsh/esm3/data/skempi/processed/unique_sequences.fasta
+  #   json_path: /data/rbg/users/wxsh/esm3/data/skempi/processed/skempi_v2_by_pdb.train.json
+  #   alignment_paths:
+  #     seq_to_seq:
+  #       - /data/rbg/users/wxsh/esm3/data/skempi/processed/alnRes/unique_sequences_TO_unique_sequences.m8
+
+  - _target_: dataset_module.TCRpMHCDataset
+    dataset_name: immrep25_train_no10x
+    json_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep25_train_no10x/immrep25_train_no10x.json
+    mhc_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep25_train_no10x/mhc_seqs.fasta
+    tcra_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep25_train_no10x/tcr_va_seqs.fasta
+    tcrb_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep25_train_no10x/tcr_vb_seqs.fasta
+    peptide_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep25_train_no10x/peptide_seqs.fasta
+    alignment_paths:
+      mhc_to_mhc:
+        - /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep25_train_no10x/alnRes/mhc_seqs_TO_mhc_seqs.m8
+      tcrva_to_tcrva:
+        - /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep25_train_no10x/alnRes/tcr_va_seqs_TO_tcr_va_seqs.m8
+      tcrvb_to_tcrvb:
+        - /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/immrep25_train_no10x/alnRes/tcr_vb_seqs_TO_tcr_vb_seqs.m8
+
+  - _target_: dataset_module.TCRpMHCDataset
+    dataset_name: mouse_h2kb_train
+    json_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_h2kb_train/mouse_h2kb_train.json
+    mhc_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_h2kb_train/mhc_seqs.fasta
+    tcra_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_h2kb_train/tcr_va_seqs.fasta
+    tcrb_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_h2kb_train/tcr_vb_seqs.fasta
+    peptide_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_h2kb_train/peptide_seqs.fasta
+    alignment_paths:
+      mhc_to_mhc:
+        - /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_h2kb_train/alnRes/mhc_seqs_TO_mhc_seqs.m8
+      tcrva_to_tcrva:
+        - /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_h2kb_train/alnRes/tcr_va_seqs_TO_tcr_va_seqs.m8
+      tcrvb_to_tcrvb:
+        - /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_h2kb_train/alnRes/tcr_vb_seqs_TO_tcr_vb_seqs.m8
+
+  - _target_: dataset_module.TCRpMHCDataset
+    dataset_name: mouse_mh2d1_train
+    json_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_mh2d1_train/mouse_mh2d1_train.json
+    mhc_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_mh2d1_train/mhc_seqs.fasta
+    tcra_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_mh2d1_train/tcr_va_seqs.fasta
+    tcrb_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_mh2d1_train/tcr_vb_seqs.fasta
+    peptide_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_mh2d1_train/peptide_seqs.fasta
+    alignment_paths:
+      mhc_to_mhc:
+        - /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_mh2d1_train/alnRes/mhc_seqs_TO_mhc_seqs.m8
+      tcrva_to_tcrva:
+        - /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_mh2d1_train/alnRes/tcr_va_seqs_TO_tcr_va_seqs.m8
+      tcrvb_to_tcrvb:
+        - /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/mouse_mh2d1_train/alnRes/tcr_vb_seqs_TO_tcr_vb_seqs.m8
+
+  
+  ###### debug mode:::
+  # - _target_: dataset_module.TCRpMHCDataset
+  #   dataset_name: jacks_v2_train
+  #   json_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/jacks_v2/test_set_subsample_neg/jacks_v2.test_peptide_3_and_tcr_1.0_subsample_2448/data.json
+  #   mhc_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/jacks_v2/test_set_subsample_neg/jacks_v2.test_peptide_3_and_tcr_1.0_subsample_2448/mhc_seqs.fasta
+  #   tcra_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/jacks_v2/test_set_subsample_neg/jacks_v2.test_peptide_3_and_tcr_1.0_subsample_2448/tcr_va_seqs.fasta
+  #   tcrb_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/jacks_v2/test_set_subsample_neg/jacks_v2.test_peptide_3_and_tcr_1.0_subsample_2448/tcr_vb_seqs.fasta
+  #   peptide_seq_path: /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/jacks_v2/test_set_subsample_neg/jacks_v2.test_peptide_3_and_tcr_1.0_subsample_2448/peptide_seqs.fasta
+  #   alignment_paths:
+  #     mhc_to_mhc:
+  #       - /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/jacks_v2/alnRes/mhc_seqs_TO_mhc_seqs.m8
+  #     tcrva_to_tcrva:
+  #       - /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/jacks_v2/alnRes/tcr_va_seqs_TO_tcr_va_seqs.m8
+  #     tcrvb_to_tcrvb:
+  #       - /data/rbg/users/wxsh/esm3/data/tcr_pmhc/tally/processed/jacks_v2/alnRes/tcr_vb_seqs_TO_tcr_vb_seqs.m8
+
+
+  # - _target_: dataset_module.GeneralPPIDataset
+  #   dataset_name: general_ppi_debug
+  #   seq_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/debug_general_ppi/seqs.fasta
+  #   json_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/debug_general_ppi/data.json
+  #   alignment_paths:
+  #     seq_to_seq:
+  #       - /data/rbg/users/wxsh/esm3/data/finalize/debug_data/debug_general_ppi/alnRes/seqs_TO_seqs.m8
+
+  # - _target_: dataset_module.GeneralPPIDataset
+  #   dataset_name: debug_general_ppi_pancs
+  #   seq_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/pancs_debug_general_ppi/seqs.fasta
+  #   json_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/pancs_debug_general_ppi/data.json
+  #   alignment_paths:
+  #     seq_to_seq:
+  #       - /data/rbg/users/wxsh/esm3/data/finalize/debug_data/pancs_debug_general_ppi/alnRes/seqs_TO_seqs.m8
+
+  # - _target_: dataset_module.GeneralPPIDataset
+  #   dataset_name: debug_general_ppi_sabdab
+  #   seq_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/debug_general_ppi_from_sabdab/seqs.fasta
+  #   json_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/debug_general_ppi_from_sabdab/data.json
+  #   alignment_paths:
+  #     seq_to_seq:
+  #       - /data/rbg/users/wxsh/esm3/data/finalize/debug_data/debug_general_ppi_from_sabdab/alnRes/seqs_TO_seqs.m8
+
+  # - _target_: dataset_module.MiniproteinDataset
+  #   dataset_name: pancs_debug
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/debug/target_seqs.fasta
+  #   binder_seq_path: /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/debug/binder_seqs.fasta
+  #   json_path: /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/debug/data.json
+  #   alignment_paths:
+  #     target_to_target:
+  #       - /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/debug/alnRes/target_seqs_TO_target_seqs.m8
+  #     binder_to_binder:
+  #       - /data/rbg/users/wxsh/esm3/data/peptides/PANCS_Binders/processed/debug/alnRes/binder_seqs_TO_binder_seqs.m8
+  
+  # - _target_: dataset_module.MiniproteinDataset
+  #   dataset_name: miniprotein_antibody_debug
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/sabdab_debug_miniprotein/target_seqs.fasta
+  #   binder_seq_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/sabdab_debug_miniprotein/binder_seqs.fasta
+  #   json_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/sabdab_debug_miniprotein/data.json
+  #   alignment_paths:
+  #     target_to_target:
+  #       - /data/rbg/users/wxsh/esm3/data/finalize/debug_data/sabdab_debug_miniprotein/alnRes/target_seqs_TO_target_seqs.m8
+  #     binder_to_binder:
+  #       - /data/rbg/users/wxsh/esm3/data/finalize/debug_data/sabdab_debug_miniprotein/alnRes/binder_seqs_TO_binder_seqs.m8
+  
+  # - _target_: dataset_module.MiniproteinDataset
+  #   dataset_name: miniprotein_generalPPI_debug
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/rcsb_debug_miniprotein/target_seqs.fasta
+  #   binder_seq_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/rcsb_debug_miniprotein/binder_seqs.fasta
+  #   json_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/rcsb_debug_miniprotein/data.json
+  #   alignment_paths:
+  #     target_to_target:
+  #       - /data/rbg/users/wxsh/esm3/data/finalize/debug_data/rcsb_debug_miniprotein/alnRes/target_seqs_TO_target_seqs.m8
+  #     binder_to_binder:
+  #       - /data/rbg/users/wxsh/esm3/data/finalize/debug_data/rcsb_debug_miniprotein/alnRes/binder_seqs_TO_binder_seqs.m8
+  
+  # - _target_: dataset_module.MiniproteinDataset
+  #   dataset_name: miniprotein_tcr_debug
+  #   target_seq_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/tcr_debug_miniprotein/target_seqs.fasta
+  #   binder_seq_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/tcr_debug_miniprotein/binder_seqs.fasta
+  #   json_path: /data/rbg/users/wxsh/esm3/data/finalize/debug_data/tcr_debug_miniprotein/data.json
+  #   alignment_paths:
+  #     target_to_target:
+  #       - /data/rbg/users/wxsh/esm3/data/finalize/debug_data/tcr_debug_miniprotein/alnRes/target_seqs_TO_target_seqs.m8
+  #     binder_to_binder:
+  #       - /data/rbg/users/wxsh/esm3/data/finalize/debug_data/tcr_debug_miniprotein/alnRes/binder_seqs_TO_binder_seqs.m8
