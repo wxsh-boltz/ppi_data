@@ -84,7 +84,7 @@ dataset = json.load(open(path))
 print(f"Read {len(dataset)} data")
 
 
-vh_vl_pairs = list() ### TODO: change to LIST please if we want to keep the distributions 
+vh_vl_pairs = list() ### change to LIST please if we want to keep the distributions 
 vhh = list()
 vll = list() # 
 vl_all = list()
