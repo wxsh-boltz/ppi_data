@@ -1793,41 +1793,6 @@ def main():
                     data["assay_id"] = train_dataset.dataset_name
             save_training_set_antibody(train_dataset.json_path.replace(".json", "_train"), train_data)
 
-            
-
-
-            
-              
-            
-            
-    ### 
-    exit()
-    for d in test_datasets:
-        print(d)
-        if d.dataset_type == "antibody":
-            dataset = json.load(open(d.json_path))
-            print(f"Read {len(dataset)} data")
-            target_id2seq = get_target_ids(dataset, d.target_role)
-            print(f"Number of targets: {len(target_id2seq)}")
-            target_id2similar_rcsb_ids = read_alignment(d.target_to_rcsb_train_mmseqs_alignment_paths)
-            target_id2target_ids = read_alignment(d.target_to_target_mmseqs_alignment_path)
-            target_pep_ids = set([line.strip() for line in open(d.target_peptide_path)])
-            target_pep_id2similar_rcsb_ids = read_alignment(d.target_peptide_to_rcsb_train_edit_distance_path, -1)
-            print(len(target_pep_id2similar_rcsb_ids))
-            new_target_ids = []
-            for target_id in target_id2seq:
-                overlap_with_rcsb = rcsb_train_complex_chain_ids & set(target_id2similar_rcsb_ids[target_id])
-                if target_id in target_pep_ids:
-                    overlap_with_rcsb = overlap_with_rcsb | set(target_pep_id2similar_rcsb_ids[target_id])
-                if (len(target_id2target_ids[target_id]) > 0 or target_id in target_pep_ids) and len(overlap_with_rcsb) == 0:
-                    new_target_ids.append(target_id)
-                
-            print(f"New targets: {len(new_target_ids)}")
-            
-            #### read alignment to the rcsb_train
-
-
-
 
 if __name__ == "__main__":
     main()
