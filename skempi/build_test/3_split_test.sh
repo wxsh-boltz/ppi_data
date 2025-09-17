@@ -1,0 +1,5 @@
+
+
+python 1_split_test.py --input_path /data/rbg/users/wxsh/esm3/data/skempi/processed/skempi_v2_by_pdb.test.json --aln_paths /data/rbg/users/wxsh/esm3/data/skempi/processed/alnRes/unique_sequences_TO_rcsb_boltz2_train_seqs_cov_mode_1.m8 /data/rbg/users/wxsh/esm3/data/skempi/processed/alnRes/unique_sequences_TO_rcsb_boltz2_train_seqs_cov_mode_2.m8 --self_aln_path /data/rbg/users/wxsh/esm3/data/skempi/processed/alnRes/unique_sequences_TO_unique_sequences.m8 --sequence_identity_threshold 1.0 --peptide_aln_path /data/rbg/users/wxsh/esm3/data/skempi/processed/alnRes/peptide_sequences_TO_rcsb_boltz2_train_seqs.m8 --peptide_path /data/rbg/users/wxsh/esm3/data/skempi/processed/alnRes/peptide_sequences.fasta
+
+# --peptide_aln_path /data/rbg/users/wxsh/esm3/data/boltz2_training/rcsb/polymers_after_20230601/alnRes/peptide_TO_rcsb_boltz2_train_seqs_maxl_17_levd_3.m8
